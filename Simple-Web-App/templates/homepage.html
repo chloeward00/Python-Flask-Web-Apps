@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block title %}Welcome to my static home page{% endblock %}
+{% block content%}
+<center>
+<h4> Welcome to my homepage </h1>
+	</center>
+
+<img src="{{url_for('static', filename='spongebob.gif')}}" align="middle" height = 500, width = 1300 />
+{% endblock %}

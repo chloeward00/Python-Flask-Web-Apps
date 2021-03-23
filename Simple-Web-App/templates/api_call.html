@@ -1,0 +1,62 @@
+<html>
+	<head>
+		<script src= "https://code.jquery.com/jquery-3.2.1.min.js"></script> <!-- using jquery-->
+		<link rel="stylesheet" href="api.css">
+	</head>
+
+	<body>
+
+		<style>
+			table, th, td {
+  			border: 1px solid black;} 
+
+			table {
+  			width: 100%;}
+	body {
+  	background-color: white;
+	}
+	</style>
+		<table id="mytable">
+			<tr>
+				<th> Name </th><!-- assigning names to the table -->
+				<th> Affiliation </th>
+				<th> Allegiance </th>
+			</tr>
+		</table>
+		<script>
+				$(document).ready(function (){
+					$.getJSON('/allegiances', function(data){
+						// data 
+
+						data.forEach(element =>{
+																						
+							table = document.getElementById("mytable");
+							newrow = document.createElement("tr");
+							table.appendChild(newrow);
+
+
+							title = document.createElement("td");
+							title.innerHTML = element['Name'];
+							newrow.appendChild(title);
+
+
+							Affiliation = document.createElement("td");
+							Affiliation.innerHTML = element['Affiliation'];
+							newrow.appendChild(Affiliation);
+
+
+							Allegiance = document.createElement("td");
+							Allegiance.innerHTML = element['Allegiance'];
+							newrow.appendChild(Allegiance);
+
+
+
+					});
+
+					});
+				});
+		</script>
+	</body>
+
+
+</html>
